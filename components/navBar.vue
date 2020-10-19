@@ -22,6 +22,17 @@
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
+
+        <!--  Menu Navigations -->
+        <div>
+  <b-nav class="menu-style">
+    <b-nav-item active>HOME</b-nav-item>
+    <b-nav-item>MOVIES</b-nav-item>
+    <b-nav-item>TV-SERIES</b-nav-item>
+    <b-nav-item>BY POPULARIY</b-nav-item>
+    <b-nav-item>YOUR FAVOURITES</b-nav-item>
+  </b-nav>
+</div>
       </div>
   </main>
 </template>
@@ -40,6 +51,12 @@ export default {};
 .my-sm-0{
 
 }
+.menu-style{
+  background: #FF8D1B;
+  color: white;
+  justify-content: center;
+}
+
 .navStyles{
 }
 </style>>

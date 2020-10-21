@@ -8,18 +8,15 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-              <b-nav-form>
-                <b-form-input
-                  size="xl"
-                  class="mr-sm-2"
-                  placeholder="Search for your favourite Movies"
-                ></b-form-input>
-                <b-button size="xl" class="my-2 my-sm-0" type="submit"
-                  >Search</b-button
-                >
-              </b-nav-form>
+                  <b-navbar-nav class="ml-auto">
+
+            <b-navbar-nav >
+                <div class="search-style">
+                <Search />
+                </div>
             </b-navbar-nav>
+                  </b-navbar-nav>
+
           </b-collapse>
         </b-navbar>
 
@@ -38,26 +35,25 @@
 </template>
 
 <script>
-export default {};
+import Search from "~/components/Search"
+export default {
+  components: {
+    Search
+  }
+};
 </script>
 
 <style scoped>
-.mr-sm-2{
-  width: 23rem;
+.search-style{
   text-align: center;
-  justify-content: center;
-  justify-self: center;
+  margin-right: 10rem;
 }
-.my-sm-0{
 
-}
 .menu-style{
   background: #FF8D1B;
   color: white;
   justify-content: center;
 }
 
-.navStyles{
-}
 </style>>
 </style>

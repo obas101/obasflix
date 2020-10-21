@@ -1,23 +1,26 @@
 <template>
-  <main style="background: ">
+  <main class="main">
     <div class="row">
-      <div class="col-2"></div>
+      <div class="col-1"></div>
       <div class="col-10">
         <!-- Movie Display -->
         <span>Movies</span>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
-            <b-card-group>
-              <b-card
-                :img-src= "`https://image.tmdb.org/t/p/w154/${movie.poster_path}`"
-                text-variant="black"
-              >
-                <h5> {{movies.title}}</h5>
-              </b-card>
-            </b-card-group>
+            <b-card
+              class="card-style title-style"
+              :img-src="`https://image.tmdb.org/t/p/w185/${movie.poster_path}`"
+              text-variant="white"
+              :title="movie.title"
+              style="max-width: 190px"
+            >
+              <div style="width: 100%"></div>
+              <!-- <span class="title-style">{{ movie.title }}</span> -->
+            </b-card>
           </div>
         </div>
       </div>
+      <div class="col-1"></div>
     </div>
   </main>
 </template>
@@ -42,6 +45,9 @@ export default {
 </script>
 
 <style>
+.main {
+  background: black;
+}
 .small-spacer {
   width: 100%;
   margin-top: 1rem;
@@ -49,6 +55,9 @@ export default {
 .large-spacer {
   width: 100%;
   margin-top: 3rem;
+}
+.card-style {
+  background: black !important;
 }
 .force {
   justify-content: center;
@@ -58,5 +67,15 @@ export default {
 }
 h6 {
   font-size: 10px;
+}
+.title-style {
+  font-size: 1rem !important;
+  padding: none;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+.card-title {
+  font-size: 15px;
 }
 </style>

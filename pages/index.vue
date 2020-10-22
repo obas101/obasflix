@@ -5,7 +5,7 @@
       <div class="col-10">
         <div class="large-spacer"></div>
         <!-- Movie Display -->
-        
+
         <span class="header-styles">Top Rated Movies</span>
         <div class="small-spacer"></div>
         <div class="force row">

@@ -12,9 +12,17 @@
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <span class="header-styles">Favorites</span>
+            <span class="header-styles"
+              ><nuxt-link class="link-style1" to="/"
+                >Favourites</nuxt-link
+              ></span
+            >
             <div class="center-spacer"></div>
-            <span class="header-styles">Watch List</span>
+            <span class="header-styles"
+              ><nuxt-link class="link-style1" to="/"
+                >Watch List</nuxt-link
+              ></span
+            >
             <div class="center-spacer"></div>
 
             <b-navbar-nav>
@@ -91,6 +99,14 @@ export default {
 </script>
 
 <style>
+.link-style1:hover {
+  color: white;
+  text-decoration: none;
+}
+.link-style1 {
+  color: #ff8d1b;
+  text-decoration: none;
+}
 .logo-font {
   font-family: sans-serif;
   font-size: 2.5rem;

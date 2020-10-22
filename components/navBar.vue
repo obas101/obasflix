@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div>
+    <div class="main-nav">
       <!-- Logo in NavBar -->
       <b-navbar class="navStyles" toggleable="lg" type="dark" variant="dark">
         <b-navbar-brand class="logo-font" href="http://obasflix.netlify.com"
@@ -24,11 +24,8 @@
       <!--  Menu Navigations -->
       <div>
         <b-nav class="menu-style">
-          <b-nav-item active><a href="">HOME</a></b-nav-item>
           <b-nav-item><a href="">MOVIES</a></b-nav-item>
           <b-nav-item><a href="">TV-SERIES</a></b-nav-item>
-          <b-nav-item><a href="">BY POPULARITY</a></b-nav-item>
-          <b-nav-item><a href="">FAVOURITES</a></b-nav-item>
         </b-nav>
       </div>
     </div>
@@ -46,9 +43,10 @@ export default {
 
 <style>
 .logo-font {
-  font-family: Impact, Haettenschweiler, "Arial Bold";
-  font-size: 3rem;
+  font-family: sans-serif;
+  font-size: 2.5rem;
   color: #ff8d1b !important;
+  font-weight: 500;
 }
 .search-style {
   text-align: center;
@@ -59,5 +57,16 @@ export default {
   background: #ff8d1b;
   color: white;
   justify-content: center;
+}
+.navStyles {
+  background: black !important;
+  color: #ff8d1b !important;
+}
+.main-nav {
+  overflow: hidden;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 </style>

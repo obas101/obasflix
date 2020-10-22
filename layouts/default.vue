@@ -1,7 +1,9 @@
 <template>
   <div>
     <navBar />
-    <Nuxt />
+    <div class="main-body">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -12,4 +14,21 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.main-body {
+  margin-top: 7.5rem;
+}
+.header-styles{
+  font-size: 20px;
+  color: #ff8d1b;
+  font-weight: 600;
+}
+.small-spacer {
+  width: 100%;
+  margin-top: 1rem;
+}
+.large-spacer {
+  width: 100%;
+  margin-top: 3rem;
+}
+</style>

@@ -3,8 +3,11 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-10">
+        <div class="large-spacer"></div>
         <!-- Movie Display -->
-        <span>Movies</span>
+        
+        <span class="header-styles">Featured Movies</span>
+        <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
             <b-card
@@ -47,14 +50,6 @@ export default {
 <style>
 .main {
   background: black;
-}
-.small-spacer {
-  width: 100%;
-  margin-top: 1rem;
-}
-.large-spacer {
-  width: 100%;
-  margin-top: 3rem;
 }
 .card-style {
   background: black !important;

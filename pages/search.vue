@@ -4,7 +4,9 @@
       <div class="col-1"></div>
       <div class="col-10">
         <!-- Movie Display -->
-        <span>Movies</span>
+        <div class="large-spacer"></div>
+        <span class="header-styles">Search Results</span>
+        <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
             <b-card
@@ -37,7 +39,8 @@ export default {
       return {
         movies: movies.results
       };
-    } catch (error) {npm
+    } catch (error) {
+      npm;
       console.log(error);
     }
   }

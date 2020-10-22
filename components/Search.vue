@@ -1,10 +1,6 @@
 <template>
   <div>
-    <input
-      placeholder="Search for Movies and TV-Shows"
-      type="text"
-      v-model="query"
-    />
+    <input placeholder="Search for Movies/TV-Shows" v-model="query" />
     <button @click="onSearch">Search</button>
   </div>
 </template>
@@ -23,14 +19,13 @@ export default {
       });
     }
   }
-  
 };
 </script>
 <style>
 input {
   background: black;
   color: white !important;
-  width: 18rem;
+  width: 15rem;
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 30px;
@@ -40,10 +35,10 @@ input {
 button {
   background: #ff8d1b;
   color: white;
-  padding: 5px;
+  padding: 5px 8px 5px 8px;
 
   text-align: center;
-  border-radius: 12px;
+  border-radius: 20px;
   font-weight: 700;
 }
 </style>

@@ -18,7 +18,14 @@ export default {
 .main-body {
   margin-top: 7.5rem;
 }
-.header-styles{
+.title-style {
+  font-size: 1rem !important;
+  padding: none;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+.header-styles {
   font-size: 20px;
   color: #ff8d1b;
   font-weight: 600;
@@ -30,5 +37,8 @@ export default {
 .large-spacer {
   width: 100%;
   margin-top: 3rem;
+}
+.center-spacer{
+  width: 2rem;
 }
 </style>

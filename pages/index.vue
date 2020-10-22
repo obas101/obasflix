@@ -63,13 +63,6 @@ export default {
 h6 {
   font-size: 10px;
 }
-.title-style {
-  font-size: 1rem !important;
-  padding: none;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-}
 .card-title {
   font-size: 15px;
 }

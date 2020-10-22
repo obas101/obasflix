@@ -12,6 +12,11 @@
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
+            <span class="header-styles">Favorites</span>
+            <div class="center-spacer"></div>
+            <span class="header-styles">Watch List</span>
+            <div class="center-spacer"></div>
+
             <b-navbar-nav>
               <div class="search-style">
                 <Search />
@@ -24,7 +29,7 @@
       <!--  Menu Navigations -->
       <div>
         <b-nav class="menu-style">
-          <b-dropdown dropup class="m-2" text="MOVIES">
+          <b-dropdown dropup class="m-2" offset-lg10 text="MOVIES">
             <b-dropdown-item>
               <NuxtLink @click="onPopularMovies" to="/popularMovies"
                 >By Popularity</NuxtLink
@@ -94,7 +99,7 @@ export default {
 }
 .search-style {
   text-align: center;
-  margin-right: 10rem;
+  /* margin-right: 10rem; */
 }
 
 .menu-style {

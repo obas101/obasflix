@@ -24,8 +24,30 @@
       <!--  Menu Navigations -->
       <div>
         <b-nav class="menu-style">
-          <b-nav-item><a href="">MOVIES</a></b-nav-item>
-          <b-nav-item><a href="">TV-SERIES</a></b-nav-item>
+          <b-dropdown dropup class="m-2" text="MOVIES">
+            <b-dropdown-item>
+              <NuxtLink @click="onPopularMovies" to="/popularMovies"
+                >By Popularity</NuxtLink
+              ></b-dropdown-item
+            >
+            <b-dropdown-item
+              ><NuxtLink @click="moviesAiringNow" to="/moviesAiringNow"
+                >Currently Airing</NuxtLink
+              ></b-dropdown-item
+            >
+          </b-dropdown>
+          <b-dropdown dropup class="m-2" text="TV-SERIES">
+            <b-dropdown-item
+              ><NuxtLink @click="onPopularTV" to="/popularTVShows"
+                >By Popularity</NuxtLink
+              ></b-dropdown-item
+            >
+            <b-dropdown-item
+              ><NuxtLink @click="seriesAiringNow" to="/seriesAiringNow"
+                >Currently Airing</NuxtLink
+              ></b-dropdown-item
+            >
+          </b-dropdown>
         </b-nav>
       </div>
     </div>
@@ -37,6 +59,28 @@ import Search from "~/components/Search";
 export default {
   components: {
     Search
+  },
+  methods: {
+    onPopularMovies() {
+      this.$router.push({
+        path: "/popularMovies"
+      });
+    },
+    moviesAiringNow() {
+      this.$router.push({
+        path: "/moviesAiringNow"
+      });
+    },
+    onPopularTV() {
+      this.$router.push({
+        path: "/popularTVShows"
+      });
+    },
+    seriesAiringNow() {
+      this.$router.push({
+        path: "/seriesAiringNow"
+      });
+    }
   }
 };
 </script>

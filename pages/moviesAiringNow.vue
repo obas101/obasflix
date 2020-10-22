@@ -6,7 +6,7 @@
         <div class="large-spacer"></div>
         <!-- Movie Display -->
         
-        <span class="header-styles">Top Rated Movies</span>
+        <span class="header-styles">Movies Airing Now</span>
         <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
@@ -35,7 +35,7 @@ export default {
   async asyncData({ $axios }) {
     try {
       let response = await $axios.$get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=e6a5ea6901b10430e9110114c0fa6799"
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=e6a5ea6901b10430e9110114c0fa6799"
       );
       return {
         movies: response.results

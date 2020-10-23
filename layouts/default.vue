@@ -41,4 +41,8 @@ export default {
 .center-spacer{
   width: 2rem;
 }
+body{
+  background: black;
+  color: white;
+}
 </style>

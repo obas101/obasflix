@@ -33,7 +33,7 @@ export default {
   async asyncData({ $axios, query }) {
     try {
       let movies = await $axios.$get(
-        `https://api.themoviedb.org/3/search/movie?api_key=e6a5ea6901b10430e9110114c0fa6799&query=${query.title}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.api_key}&query=${query.title}`
       );
       console.log(movies);
       return {

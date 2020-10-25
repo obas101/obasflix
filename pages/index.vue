@@ -16,9 +16,11 @@
               text-variant="white"
               :title="movie.title"
               style="max-width: 190px"
+
+              :to="`/movie/this.route${display.productId}/${display.productName.replace(/[' ']+/g, '-').toLowerCase()}`"
             >
               <div style="width: 100%"></div>
-              <!-- <span class="title-style">{{ movie.title }}</span> -->
+              <span class="title-style">{{ movie.title }}</span>
             </b-card>
           </div>
         </div>
@@ -35,7 +37,7 @@ export default {
   async asyncData({ $axios }) {
     try {
       let response = await $axios.$get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.api_key}`
+        `https://api.themoviedb.org/3/movies/top_rated?api_key=${process.env.api_key}`
       );
       return {
         movies: response.results

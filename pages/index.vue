@@ -10,15 +10,19 @@
         <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
-            <b-card
-              class="card-style title-style"
-              :img-src="`https://image.tmdb.org/t/p/w185/${movie.poster_path}`"
-              text-variant="white"
-              :title="movie.title"
-              style="max-width: 190px"
-            >
-              <div style="width: 100%"></div>
-            </b-card>
+            <nuxt-link :to="`/movie/${movie.id}`"
+              ><b-card
+                class="card-style title-style"
+                :img-src="
+                  `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
+                "
+                text-variant="white"
+                :title="movie.title"
+                style="max-width: 190px"
+              >
+                <div style="width: 100%"></div>
+              </b-card>
+            </nuxt-link>
           </div>
         </div>
       </div>

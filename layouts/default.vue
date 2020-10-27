@@ -15,6 +15,10 @@ export default {
 </script>
 
 <style>
+*body{
+  margin: 0;
+  padding: 0;
+}
 .main-body {
   margin-top: 7.5rem;
 }

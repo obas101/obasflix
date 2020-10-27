@@ -5,14 +5,16 @@
     <div class="row">
       <div class="col-xl-2 col-lg-2 col-md-2"></div>
       <div class="col-xl-3 col-lg-3 col-md-3">
-        <img
-          :src="`https://image.tmdb.org/t/p/w300/${movie.poster_path}`"
-          alt=""
-        />
+        <div class="alignment">
+          <img
+            :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`"
+            alt=""
+          />
+        </div>
       </div>
       <div class="col-xl-5 col-lg-5 col-md-5">
         <div class="small-spacer"></div>
-        <div>
+        <div style="padding:0.7rem">
           <span class="movie-title">{{ movie.title }}</span>
           <br />
           <div class="small-spacer"></div>
@@ -133,6 +135,10 @@ body {
 }
 .main-body-2 {
   margin-top: 12rem;
+}
+.alignment{
+  display: flex;
+  justify-content: center;
 }
 h1 {
   text-align: center !important;

@@ -10,7 +10,7 @@
         <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">
-            <nuxt-link :to="`/movie/${movie.id}`"
+            <nuxt-link class="aa" :to="`/movie/${movie.id}`"
               ><b-card
                 class="card-style title-style"
                 :img-src="
@@ -20,6 +20,8 @@
                 :title="movie.title"
                 style="max-width: 190px"
               >
+                <!-- <span class="title-style">{{ movie.title }}</span> -->
+
                 <div style="width: 100%"></div>
               </b-card>
             </nuxt-link>

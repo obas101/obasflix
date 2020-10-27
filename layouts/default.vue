@@ -25,6 +25,11 @@ export default {
   justify-content: center;
   width: 100%;
 }
+.title-style:hover {
+  color: #ff8d1b;
+  outline: none;
+  text-decoration: none;
+}
 .header-styles {
   font-size: 20px;
   color: #ff8d1b;
@@ -38,11 +43,18 @@ export default {
   width: 100%;
   margin-top: 3rem;
 }
-.center-spacer{
+.center-spacer {
   width: 2rem;
 }
-body{
+body {
   background: black;
   color: white;
+}
+
+.aa.b-card:hover {
+  outline: none;
+  text-decoration: none;
+  background: red;
+  color: yellow;
 }
 </style>

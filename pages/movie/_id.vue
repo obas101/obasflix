@@ -13,6 +13,10 @@
       <div class="col-xl-5 col-lg-5 col-md-5">
         <div>
           <span class="movie-title">{{ movie.title }}</span>
+          <br />
+          <div class="small-spacer"></div>
+
+          <span class="tagline">{{ movie.tagline }}</span>
           <div class="small-spacer"></div>
           <div>
             <hr class="line" />
@@ -29,40 +33,62 @@
 
           <!-- Movie Genres-->
           <div>
-            <span>{{ movie.genres.name }}</span>
+            <div v-for="genre in movie.genres" :key="genre.id">
+              <span>{{ genre.name }}</span>
+            </div>
           </div>
           <div class="small-spacer"></div>
 
           <!-- movie info -->
           <div class="movie-info">
-            <div>{{ movie.parentalGuide }}</div>
             <div>Release Date: {{ movie.release_date }}</div>
             <div>Run Time: {{ movie.runtime }}mins</div>
             <div>Rating: {{ movie.vote_average }}/10</div>
           </div>
           <div class="large-spacer"></div>
           <div class="production-info">
-            <!-- production companies -->
-            <div class="">
-              <div class="sub-heading">Company Name</div>
-              <div>{{ movie.production_companies.name }}</div>
+            <!-- production company -->
+            <div>
+              <span class="sub-heading">Production Companies: </span>
+              <div
+                class="production_details"
+                v-for="production in movie.production_companies"
+                :key="production.id"
+              >
+                <div>{{ production.name }},&nbsp;</div>
+              </div>
             </div>
+            <div class="small-spacer"></div>
 
-            <!-- production country -->
+            <!-- production countries -->
             <div class="">
-              <div class="sub-heading">Production Country</div>
-              <div>{{ movie.production_companies.origin_country }}</div>
+              <span class="sub-heading">Production Countries: </span>
+              <div
+                class="production_details"
+                v-for="country in movie.production_countries"
+                :key="country.id"
+              >
+                <div>{{ country.name }},&nbsp;</div>
+              </div>
             </div>
-
+            <div class="small-spacer"></div>
             <!-- status -->
             <div class="">
-              <div><span  class="sub-heading">Status:</span> {{ movie.status }}</div>
+              <div>
+                <span class="sub-heading">Status:</span> {{ movie.status }}
+              </div>
             </div>
-
+            <div class="small-spacer"></div>
             <!-- language -->
             <div>
-              <div class="sub-heading">Language</div>
-              <div>{{ movie.spoken_languages.name }}</div>
+              <span class="sub-heading">Spoken Languages:</span>
+              <div
+                class="production_details"
+                v-for="language in movie.spoken_languages"
+                :key="language.id"
+              >
+                <div>{{ language.name }},&nbsp;</div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,6 +111,7 @@ export default {
       let movies = await $axios.$get(
         `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.api_key}`
       );
+      console.log(movies);
       return {
         movie: movies
       };
@@ -110,6 +137,12 @@ h1 {
   font-size: 35px;
   letter-spacing: 1px;
 }
+.tagline {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: #ff8d1b;
+}
 .movie-description {
   font-weight: 200;
   font-size: 15px;
@@ -124,12 +157,16 @@ h1 {
 }
 .sub-heading {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
 }
 .production-info {
   line-height: 1.5rem !important;
 }
 .line {
   border-color: white;
+}
+.production_details {
+  display: inline-block !important;
+  font-size: 13px;
 }
 </style>

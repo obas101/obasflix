@@ -11,6 +11,7 @@
         />
       </div>
       <div class="col-xl-5 col-lg-5 col-md-5">
+        <div class="small-spacer"></div>
         <div>
           <span class="movie-title">{{ movie.title }}</span>
           <br />

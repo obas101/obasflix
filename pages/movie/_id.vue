@@ -33,8 +33,12 @@
 
           <!-- Movie Genres-->
           <div>
-            <div v-for="genre in movie.genres" :key="genre.id">
-              <span>{{ genre.name }}</span>
+            <div
+              class="production_details"
+              v-for="genre in movie.genres"
+              :key="genre.id"
+            >
+              <span>{{ genre.name }}&nbsp;&nbsp;</span>
             </div>
           </div>
           <div class="small-spacer"></div>
@@ -75,7 +79,8 @@
             <!-- status -->
             <div class="">
               <div>
-                <span class="sub-heading">Status:</span> {{ movie.status }}
+                <span class="sub-heading">Status:</span>
+                <span class="production_details">{{ movie.status }}</span>
               </div>
             </div>
             <div class="small-spacer"></div>
@@ -168,5 +173,6 @@ h1 {
 .production_details {
   display: inline-block !important;
   font-size: 13px;
+  color: #ff8d1b;
 }
 </style>

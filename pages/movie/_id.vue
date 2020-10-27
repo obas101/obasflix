@@ -21,8 +21,8 @@
           <div>
             <hr class="line" />
           </div>
-          <!-- Watchlist-->
-          <div><button>Add to Watchlist</button></div>
+          <!-- Favorite-->
+          <div><button>Add to WatchList</button></div>
           <div class="large-spacer"></div>
 
           <!-- Description-->

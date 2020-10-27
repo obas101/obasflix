@@ -12,15 +12,15 @@
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <span class="header-styles"
+            <!-- <span class="header-styles"
               ><nuxt-link class="link-style1" to="/"
                 >Favourites</nuxt-link
               ></span
-            >
+            > -->
             <div class="center-spacer"></div>
             <span class="header-styles"
-              ><nuxt-link class="link-style1" to="/"
-                >Watch List</nuxt-link
+              ><nuxt-link class="link-style1" to="/watchlist"
+                >WatchList</nuxt-link
               ></span
             >
             <div class="center-spacer"></div>

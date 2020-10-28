@@ -25,6 +25,13 @@
             >
             <div class="center-spacer"></div>
 
+            <span class="header-styles"
+              ><nuxt-link class="link-style1" to="/signup"
+                >SignUp</nuxt-link
+              ></span
+            >
+            <div class="center-spacer"></div>
+
             <b-navbar-nav>
               <div class="search-style">
                 <Search />

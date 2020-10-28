@@ -9,7 +9,7 @@
         <span class="header-styles">My WatchList</span>
         <div class="small-spacer"></div>
         <div class="force row">
-          <div class="test" v-for="movie in movies" :key="movie.id">
+          <div class="test" v-for="movie in movies" :key="movie._id">
             <nuxt-link class="aa" :to="`/movie/${movie.id}`"
               ><b-card
                 class="card-style title-style"
@@ -36,12 +36,12 @@
 
 <script>
 export default {
-  /*  components: {},
+components: {},
 
   async asyncData({ $axios }) {
     try {
       let response = await $axios.$get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.api_key}`
+        `https://api.themoviedb.org/3/movies?api_key=${process.env.api_key}`
       );
       return {
         movies: response.results
@@ -49,7 +49,7 @@ export default {
     } catch (error) {
       console.log(error);
     }
-  } **/
+  } 
 };
 </script>
 

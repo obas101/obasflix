@@ -17,7 +17,7 @@ export default {
   padding: 0;
 }
 .main-body {
-  margin-top: 7.5rem;
+  margin-top: 5rem;
 }
 .title-style {
   font-size: 1rem !important;

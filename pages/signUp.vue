@@ -3,10 +3,16 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4"></div>
       <div class="col-xl-4 col-lg-4 col-md-4">
-        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form
+          @submit="onSubmit"
+          @reset="onReset"
+          v-if="show"
+          style="padding: 1rem"
+        >
           <span class="header-styles" style="font-size: 2.5rem"
             >Create a Free Account</span
           >
+          <div class="small-spacer"></div>
           <b-form-group
             id="input-group-1"
             label="Email address:"
@@ -39,6 +45,7 @@
             id="input-group-2"
             label="Password:"
             label-for="input-2"
+            description="Password must not be less than 6 characters"
           >
             <b-form-input
               id="input-2"
@@ -47,7 +54,9 @@
               placeholder="Enter Password"
             ></b-form-input>
           </b-form-group>
-          <div class="large-spacer"></div>
+
+          <div class="small-spacer"></div>
+
           <b-button
             type="submit"
             variant="primary"
@@ -55,7 +64,9 @@
             >Create an Account</b-button
           >
           <div class="small-spacer"></div>
-          <span style="font-size: 14px">Already have an Account? <span>Sign In</span></span>
+          <span style="font-size: 14px"
+            >Already have an Account? <span>Sign In</span></span
+          >
         </b-form>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4"></div>

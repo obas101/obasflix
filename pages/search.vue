@@ -5,7 +5,6 @@
       <div class="col-10">
         <!-- Movie Display -->
         <div class="large-spacer"></div>
-        <span class="header-styles">Search Results</span>
         <div class="small-spacer"></div>
         <div class="force row">
           <div class="test" v-for="movie in movies" :key="movie.id">

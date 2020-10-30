@@ -3,25 +3,30 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4"></div>
       <div class="col-xl-4 col-lg-4 col-md-4">
-        <b-form
-          @submit="onSubmit"
-          @reset="onReset"
-          v-if="show"
-          style="padding: 1rem"
-        >
+        <b-form style="padding: 1rem">
           <span class="header-styles" style="font-size: 2.5rem"
             >Create a Free Account</span
           >
           <div class="small-spacer"></div>
+
+          <b-form-group label="Username:" label-for="input-2">
+            <b-form-input
+              style="color: black !important"
+              v-model="name"
+              required
+              type="text"
+              placeholder="Enter Username"
+            ></b-form-input>
+          </b-form-group>
+
           <b-form-group
-            id="input-group-1"
             label="Email address:"
             label-for="input-1"
             description="We'll never share your email with anyone else."
           >
             <b-form-input
-              id="input-1"
-              v-model="form.email"
+              style="color: black !important"
+              v-model="email"
               type="email"
               required
               placeholder="Enter email"
@@ -29,28 +34,15 @@
           </b-form-group>
 
           <b-form-group
-            id="input-group-2"
-            label="Username:"
-            label-for="input-2"
-          >
-            <b-form-input
-              id="input-2"
-              v-model="form.name"
-              required
-              placeholder="Enter Username"
-            ></b-form-input>
-          </b-form-group>
-
-          <b-form-group
-            id="input-group-2"
             label="Password:"
             label-for="input-2"
             description="Password must not be less than 6 characters"
           >
             <b-form-input
-              id="input-2"
-              v-model="form.password"
+              v-model="password"
+              style="color: black !important"
               required
+              type="password"
               placeholder="Enter Password"
             ></b-form-input>
           </b-form-group>
@@ -58,7 +50,7 @@
           <div class="small-spacer"></div>
 
           <b-button
-            type="submit"
+            @click="onSignup"
             variant="primary"
             style="background: #ff8d1b; width: 100%; font-size: 18px; font-weight: 500"
             >Create an Account</b-button
@@ -79,39 +71,51 @@ export default {
   layout: "none",
   data() {
     return {
-      form: {
-        email: "",
-        name: "",
-        food: null,
-        checked: []
-      },
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn"
-      ],
-      show: true
+      email: "",
+      name: "",
+      password: ""
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
+    async onSignup() {
+      try {
+        let data = {
+          name: this.name,
+          email: this.email,
+          password: this.password
+        };
+
+        let requestToken = await this.$axios.$get(
+          `https://api.themoviedb.org/3/authentication/token/new?api_key=${process.env.api_key}`,
+          data
+        );
+        // (`https://www.themoviedb.org/authenticate/${requestToken}`);
+        console.log(requestToken.request_token);
+
+        if (requestToken.success) {
+          window.location.replace(
+            `https://www.themoviedb.org/authenticate/${requestToken.request_token}`
+          );
+        }
+        //parse token into this url
+        //https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}
+
+        // return {
+        //   requestToken: requestToken.request_token
+        // };
+
+        // if (response.success) {
+        //   this.$auth.loginWith("local", {
+        //     data: {
+        //       email: this.email,
+        //       password: this.password
+        //     }
+        //   });
+        //   this.$router.push("/");
+        // }
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };

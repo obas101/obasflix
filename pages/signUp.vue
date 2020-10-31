@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4"></div>
       <div class="col-xl-4 col-lg-4 col-md-4">
+        <div class="large-spacer"></div>
         <b-form style="padding: 1rem">
           <span class="header-styles" style="font-size: 2.5rem"
             >Create a Free Account</span
@@ -92,17 +93,25 @@ export default {
         // (`https://www.themoviedb.org/authenticate/${requestToken}`);
         console.log(requestToken.request_token);
 
-        if (requestToken.success) {
-          window.location.replace(
-            `https://www.themoviedb.org/authenticate/${requestToken.request_token}`
-          );
+        if (
+          this.name !== "" &&
+          this.email !== "" &&
+          this.password !== "" &&
+          requestToken.success
+        ) {
+          this.$auth.loginWith("local", {
+            data: {
+              email: this.email,
+              password: this.password
+            }
+          });
+          {
+            window.location.replace(
+              `https://www.themoviedb.org/authenticate/${requestToken.request_token}?redirect_to=http://localhost:3000`
+            );
+          }
+          this.$router.push("/");
         }
-        //parse token into this url
-        //https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}
-
-        // return {
-        //   requestToken: requestToken.request_token
-        // };
 
         // if (response.success) {
         //   this.$auth.loginWith("local", {

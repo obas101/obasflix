@@ -20,10 +20,10 @@ export default {
   padding: 0;
 }
 .main-body {
-  margin-top: 7.5rem;
+  margin-top: 8rem !important;
 }
 .title-style {
-  font-size: 1rem !important;
+  font-size: 1.5rem !important;
   padding: none;
   text-align: center;
   justify-content: center;

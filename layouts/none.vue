@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="main-body">
       <Nuxt />
-    </div>
   </div>
 </template>
 
@@ -20,7 +18,7 @@ export default {
   margin-top: 5rem;
 }
 .title-style {
-  font-size: 1rem !important;
+  font-size: 1.5rem !important;
   padding: none;
   text-align: center;
   justify-content: center;

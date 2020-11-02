@@ -6,19 +6,9 @@
         <div class="large-spacer"></div>
         <b-form style="padding: 1rem">
           <span class="header-styles" style="font-size: 2.5rem"
-            >Create a Free Account</span
+            >Login to Account</span
           >
           <div class="small-spacer"></div>
-
-          <b-form-group label="Username:" label-for="input-2">
-            <b-form-input
-              style="color: black !important"
-              v-model="name"
-              required
-              type="text"
-              placeholder="Enter Username"
-            ></b-form-input>
-          </b-form-group>
 
           <b-form-group
             label="Email address:"
@@ -51,14 +41,15 @@
           <div class="small-spacer"></div>
 
           <b-button
-            @click="onSignup"
+            @click="onLogin"
             variant="primary"
             style="background: #ff8d1b; width: 100%; font-size: 18px; font-weight: 500"
-            >Create an Account</b-button
+            >Login</b-button
           >
           <div class="small-spacer"></div>
           <span style="font-size: 14px"
-            >Already have an Account? <span>Sign In</span></span
+            >Dont have an Account?
+            <span><nuxt-link to="/signup"> Sign Up</nuxt-link></span></span
           >
         </b-form>
       </div>
@@ -73,32 +64,18 @@ export default {
   data() {
     return {
       email: "",
-      name: "",
       password: ""
     };
   },
   methods: {
-    async onSignup() {
+    async onLoginup() {
       try {
         let data = {
-          name: this.name,
           email: this.email,
           password: this.password
         };
 
-        let requestToken = $axios.$get(
-          `https://api.themoviedb.org/3/authentication/token/new?api_key=${process.env.api_key}`
-        );
-        let session = this.$axios.$post(
-          `https://api.themoviedb.org/3/authentication/session/new?api_key=${process.env.api_key}`,
-          data
-        );
-        const [respRequestToken, respSession] = await Promise.all([
-          requestToken,
-          session
-        ]);
-        // (`https://www.themoviedb.org/authenticate/${requestToken}`);
-        console.log(requestToken.request_token);
+        
 
         if (
           this.name !== "" &&

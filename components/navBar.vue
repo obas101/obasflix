@@ -26,8 +26,9 @@
             <div class="center-spacer"></div>
 
             <span class="header-styles"
-              ><nuxt-link class="link-style1" to="/signup"
-                >SignUp</nuxt-link
+              ><nuxt-link class="link-style2" to="/signup">SignUp</nuxt-link>
+              /<nuxt-link class="link-style2" to="/login"
+                >Login</nuxt-link
               ></span
             >
             <div class="center-spacer"></div>
@@ -113,6 +114,12 @@ export default {
 .link-style1 {
   color: #ff8d1b;
   text-decoration: none;
+  font-size: 16px;
+}
+.link-style2 {
+  color: #ff8d1b;
+  text-decoration: none;
+  font-size: 14px;
 }
 .logo-font {
   font-family: sans-serif;

@@ -6,7 +6,7 @@
         <div class="large-spacer"></div>
         <b-form style="padding: 1rem">
           <span class="header-styles" style="font-size: 2.5rem"
-            >Create a Free Account</span
+            >Create Account</span
           >
           <div class="small-spacer"></div>
 
@@ -69,6 +69,8 @@
 
 <script>
 export default {
+  middleware: "auth",
+  auth: "guest",
   layout: "none",
   data() {
     return {

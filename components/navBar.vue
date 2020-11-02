@@ -26,8 +26,7 @@
             <div class="center-spacer"></div>
 
             <span class="header-styles"
-              ><nuxt-link class="link-style2" to="/signup">SignUp</nuxt-link>
-              /<nuxt-link class="link-style2" to="/login"
+              ><nuxt-link class="link-style2" to="/signup">SignUp</nuxt-link>/<nuxt-link class="link-style2" to="/login"
                 >Login</nuxt-link
               ></span
             >
@@ -108,6 +107,10 @@ export default {
 
 <style>
 .link-style1:hover {
+  color: white;
+  text-decoration: none;
+}
+.link-style2:hover {
   color: white;
   text-decoration: none;
 }

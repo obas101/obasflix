@@ -6,7 +6,7 @@
         <div class="large-spacer"></div>
         <b-form style="padding: 1rem">
           <span class="header-styles" style="font-size: 2.5rem"
-            >Login to Account</span
+            >Login Account</span
           >
           <div class="small-spacer"></div>
 
@@ -60,6 +60,8 @@
 
 <script>
 export default {
+  middleware: "auth",
+  auth: "guest",
   layout: "none",
   data() {
     return {
@@ -70,43 +72,13 @@ export default {
   methods: {
     async onLoginup() {
       try {
-        let data = {
-          email: this.email,
-          password: this.password
-        };
-
-        
-
-        if (
-          this.name !== "" &&
-          this.email !== "" &&
-          this.password !== "" &&
-          respRequestToken.success
-          // respSession.success
-        ) {
-          this.$auth.loginWith("local", {
-            data: {
-              email: this.email,
-              password: this.password
-            }
-          });
-          {
-            window.location.replace(
-              `https://www.themoviedb.org/authenticate/${requestToken.request_token}?redirect_to=http://localhost:3000`
-            );
+        this.$auth.loginWith("local", {
+          data: {
+            email: this.email,
+            password: this.password
           }
-          this.$router.push("/");
-        }
-
-        // if (response.success) {
-        //   this.$auth.loginWith("local", {
-        //     data: {
-        //       email: this.email,
-        //       password: this.password
-        //     }
-        //   });
-        //   this.$router.push("/");
-        // }
+        });
+        this.$router.push("/");
       } catch (error) {
         console.log(error);
       }
